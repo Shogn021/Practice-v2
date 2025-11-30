@@ -359,19 +359,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 511606179}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1510600760}
-        m_TargetAssemblyTypeName: Title, Assembly-CSharp
-        m_MethodName: Resume
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &511606179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,9 +571,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1510600760}
-        m_TargetAssemblyTypeName: Title, Assembly-CSharp
-        m_MethodName: GoToTitle
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: GoToTile
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -856,11 +844,7 @@ MonoBehaviour:
   moveVector: {x: 0, y: 0, z: 0}
   canMove: 1
   animator: {fileID: 1389491140}
-  escTab: {fileID: 629636754}
   inputVector: {x: 0, y: 0}
-  runSpeed: 5
-  isRun: 0
-  isEscTabActivated: 0
 --- !u!114 &1389491144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -903,7 +887,6 @@ GameObject:
   - component: {fileID: 1510600758}
   - component: {fileID: 1510600757}
   - component: {fileID: 1510600756}
-  - component: {fileID: 1510600760}
   m_Layer: 5
   m_Name: UICanvas
   m_TagString: Untagged
@@ -996,19 +979,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1510600760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1510600755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e2ea23c4fd825544b9b515cf9d65ad8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Title
-  sceneName: 
 --- !u!1 &1624114772
 GameObject:
   m_ObjectHideFlags: 0
