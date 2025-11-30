@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Wall
   - 
   - 
   - 
@@ -41,8 +41,20 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 3597217057
+    locked: 0
+  - name: Object
+    uniqueID: 473315163
+    locked: 0
+  - name: On Object
+    uniqueID: 1621653877
+    locked: 0
   - name: Player
     uniqueID: 446782223
+    locked: 0
+  - name: AboveObject
+    uniqueID: 2626033659
     locked: 0
   - name: UI
     uniqueID: 1870586863
