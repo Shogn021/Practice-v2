@@ -101,8 +101,6 @@ public class InventoryGrid : MonoBehaviour
 
         // 크기는 이미 sizeDelta로 칸 단위 맞춰둔 상태
         itemRT.localScale = Vector3.one;
-        
-
 
     }
 

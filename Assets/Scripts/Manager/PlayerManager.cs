@@ -20,6 +20,8 @@ public class PlayerManager : CharacterController
     #endregion
 
     public GameObject escTab;
+    public GameObject inventoryTab;
+    public GameObject statusTab;
 
     [SerializeField]
     Vector2 inputVector;
@@ -27,14 +29,11 @@ public class PlayerManager : CharacterController
     public float runSpeed;
     private float applyRunSpeed;
 
+    public bool isWalking;
     public bool isRun;
-    public bool isEscTabActivated;
+    public bool isEscTabActivated = false;
+    public bool isInventoryTabActivated = false;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
 
     #region Input System
     void OnMove(InputValue value)
@@ -67,32 +66,51 @@ public class PlayerManager : CharacterController
         }
     }
 
+    void OnInventory(InputValue value)
+    {
+        isInventoryTabActivated = !isInventoryTabActivated;
+        if (isInventoryTabActivated)
+        {
+            inventoryTab.SetActive(true);
+            statusTab.SetActive(true);
+            canMove = false;
+        }
+        else
+        {
+            inventoryTab.SetActive(false);
+            statusTab.SetActive(false);
+            canMove = true;
+        }
+    }
+
+
     #endregion Input System
 
 
     // Update is called once per frame
     void Update()
     {
-        if (!canMove)
+        if (canMove)
         {
-            return;
-        }
+            isWalking = (inputVector != Vector2.zero);
 
-        if (CheckCollision()) // 충돌 감지
-        {
-            return;
-        }
+            if (CheckCollision()) // 충돌 감지
+            {
+                return;
+            }
 
-        
-        bool isWalking = (inputVector != Vector2.zero);
-        animator.SetBool("Walking", isWalking);
-        animator.SetBool("Running", isRun);
+            animator.SetBool("Walking", isWalking);
+            animator.SetBool("Running", isRun);
 
-        base.Flip();
 
-        if (isWalking)
-        {
+            base.Flip();
+
+
             transform.position += moveVector * (moveSpeed + applyRunSpeed) * Time.deltaTime;
+        }
+        else
+        {
+            animator.SetBool("Walking", false);
         }
 
     }
